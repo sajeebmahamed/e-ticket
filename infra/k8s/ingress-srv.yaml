@@ -6,15 +6,19 @@ metadata:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
+  tls:
+  - hosts:
+    - e-ticket.dev
+    # secretName: e-ticket-secret
   rules:
-    - host: e-ticket.dev
-      http: 
-        paths: 
-          - path: /api/users/?(.*)
-            pathType: Prefix
-            backend:
-              service:
-                name: auth-srv
-                port:
-                  number: 3000
+  - host: e-ticket.dev
+    http:
+      paths:
+      - path: /api/users/?(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: auth-srv
+            port:
+              number: 3000          
               
