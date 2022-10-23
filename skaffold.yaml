@@ -17,3 +17,12 @@ build:
           # - src: "src/*"
           - src: "src/**/*.ts"
             dest: .
+    - image: sajeebxn/client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          # - src: "src/*"
+          - src: "**/*.js"
+            dest: .
