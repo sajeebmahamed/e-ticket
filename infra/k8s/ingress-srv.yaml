@@ -8,10 +8,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - e-ticket.dev
+    - ticketing.dev
     # secretName: e-ticket-secret
   rules:
-  - host: e-ticket.dev
+  - host: ticketing.dev
     http:
       paths:
       - path: /api/users/?(.*)
