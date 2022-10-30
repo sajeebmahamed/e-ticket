@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 const LandingPage = () => {
   const [currentUser, setCurrentUser] = useState(null);
-  console.log(currentUser);
   useEffect(async() => {
     const { data } = await axios.get('/api/users/currentuser');
     setCurrentUser(data.currentUser);
