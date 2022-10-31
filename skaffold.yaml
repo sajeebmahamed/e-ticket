@@ -26,3 +26,11 @@ build:
           # - src: "src/*"
           - src: "**/*.js"
             dest: .
+    - image: sajeebxn/tickets
+      context: tickets
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
